@@ -54,7 +54,7 @@ if st.button("Классифицировать", type="primary"):
     if not title:
         st.error("\"Задачу с условием может решить любой дурак. А ты попробуй реши задачу без условия!\" (Заполните хотя бы название статьи)")
     else:
-        with st.spinner("Подготовка модели... Первый запрос требует небольшого ожидания"):
+        with st.spinner("Выпекаем токены для ответа"):
             if use_abstract and abstract:
                 text_to_classify = f"{title}. {abstract}"
             else:
