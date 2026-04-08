@@ -48,7 +48,7 @@ abstract = st.text_area("", placeholder="""In the Equal-Subset-Sum problem, we a
 """, height=200, disabled=not use_abstract, label_visibility="collapsed")
 
 st.divider()
-st.caption("Модель: facebook/distilbart-mnli-12-1 (zero-shot классификация)")
+st.caption("Модель: valhalla/distilbart-mnli-12-1 (zero-shot классификация)")
 
 if st.button("Классифицировать", type="primary"):
     if not title:
