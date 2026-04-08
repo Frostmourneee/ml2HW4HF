@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from transformers import pipeline
+from transformers.pipelines import pipeline
 
 st.set_page_config(page_title="Классификатор статей ArXiv", layout="wide")
 st.title("Классификатор научных статей")
