@@ -36,7 +36,7 @@ CATEGORIES = [
 
 @st.cache_resource
 def load_model():
-    return pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+    return pipeline("zero-shot-classification", model="valhalla/distilbart-mnli-12-1")
 
 def classify_text(text, categories):
     classifier = load_model()
@@ -48,13 +48,13 @@ abstract = st.text_area("", placeholder="""In the Equal-Subset-Sum problem, we a
 """, height=200, disabled=not use_abstract, label_visibility="collapsed")
 
 st.divider()
-st.caption("Модель: facebook/bart-large-mnli (zero-shot классификация)")
+st.caption("Модель: facebook/distilbart-mnli-12-1 (zero-shot классификация)")
 
 if st.button("Классифицировать", type="primary"):
     if not title:
         st.error("\"Задачу с условием может решить любой дурак. А ты попробуй реши задачу без условия!\" (Заполните хотя бы название статьи)")
     else:
-        with st.spinner("Выпекаем токены для ответа"):
+        with st.spinner("Выпекаем токены для ответа... Первоначальное кеширование модели может занять время"):
             if use_abstract and abstract:
                 text_to_classify = f"{title}. {abstract}"
             else:
