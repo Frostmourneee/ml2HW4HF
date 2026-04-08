@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 from transformers.pipelines import pipeline
 
-st.set_page_config(page_title="Классификатор статей ArXiv", layout="wide")
-st.title("Классификатор научных статей")
-st.markdown("Определение тематики статьи по названию и аннотации.")
+st.title("Определение категории/тега научной статьи по названию и аннотации")
 
 CATEGORIES = [
     "Computer Science",
